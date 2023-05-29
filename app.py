@@ -2,14 +2,14 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import GridSearchCV
 from sklearn.linear_model import LinearRegression
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
-from matplotlib.pylab import rcParams
+# from matplotlib.pylab import rcParams
 from sklearn.impute import SimpleImputer
 import seaborn as sns
 from pandas.plotting import scatter_matrix
@@ -29,20 +29,20 @@ new_df = pd.DataFrame(X, columns = df.columns)
 new_df.describe()
 new_df.isna().sum()
 # %matplotlib inline
-new_df.hist(bins=50, figsize=(20,15))
-plt.show()
+# new_df.hist(bins=50, figsize=(20,15))
+# plt.show()
 corr_matrix = new_df.corr()
 corr_matrix['median_house_value'].sort_values(ascending=False)
 new_df['bedroom_ratio'] = new_df['total_bedrooms']/new_df['total_rooms'] #Total number of bedrooms per room
 new_df['household_rooms'] = new_df['total_rooms']/new_df['households'] #Total number of rooms per household
 # df
 new_df.drop(['total_bedrooms','households','population'],axis = 1,inplace=True)
-rcParams['figure.figsize'] = (10,5)
+# rcParams['figure.figsize'] = (10,5)
 sns.heatmap(corr_matrix,annot=True,cmap='Greens')
 attributes = ['median_income','bedroom_ratio','housing_median_age','<1H OCEAN']
-scatter_matrix(new_df[attributes],figsize=(20,10))
-new_df.plot(kind='scatter',x='median_house_value',y='median_income',alpha=0.8)
-new_df.plot(kind='scatter',x='median_house_value',y='total_rooms',alpha=0.8)
+# scatter_matrix(new_df[attributes],figsize=(20,10))
+# new_df.plot(kind='scatter',x='median_house_value',y='median_income',alpha=0.8)
+# new_df.plot(kind='scatter',x='median_house_value',y='total_rooms',alpha=0.8)
 pd.reset_option("display.max_rows")
 import numpy as np
 from scipy.spatial import distance
@@ -59,8 +59,8 @@ outliers
 # min(mahalanobis_dist)
 new_df = new_df.drop(outliers, axis=0)
 new_df.shape
-new_df.plot(kind='scatter',x='median_house_value',y='median_income',alpha=0.8)
-new_df.plot(kind='scatter',x='median_house_value',y='total_rooms',alpha=0.8)
+# new_df.plot(kind='scatter',x='median_house_value',y='median_income',alpha=0.8)
+# new_df.plot(kind='scatter',x='median_house_value',y='total_rooms',alpha=0.8)
 x = new_df.drop("median_house_value",axis=1)
 y = new_df["median_house_value"]
 x_train , x_test , y_train , y_test = train_test_split(x,y,random_state=100,test_size=0.2)
