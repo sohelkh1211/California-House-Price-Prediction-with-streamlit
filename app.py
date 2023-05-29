@@ -1,7 +1,5 @@
 import streamlit as st
 import numpy as np
-from predict_cost import predict
-from house import R2
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -83,6 +81,11 @@ MAE = mean_absolute_error(y_test , y_pred)
 RMSE = np.sqrt(MSE)
 R2 = r2_score(y_test , y_pred)
 MSE , MAE , RMSE, R2
+
+import joblib
+joblib.dump(model, "model.sav")
+def predict(data):
+  return model.predict(data)
 
 st.title('House price prediction')
  
