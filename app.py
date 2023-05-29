@@ -81,7 +81,10 @@ MAE = mean_absolute_error(y_test , y_pred)
 RMSE = np.sqrt(MSE)
 R2 = r2_score(y_test , y_pred)
 MSE , MAE , RMSE, R2
-
+import joblib
+joblib.dump(model, "model.sav")
+def predict(data):
+  return model.predict(data)
 
 st.title('House price prediction')
  
