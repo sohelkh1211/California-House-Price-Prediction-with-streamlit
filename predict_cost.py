@@ -1,4 +1,4 @@
-from house import model
+from house.py import model
 import joblib
 joblib.dump(model, "model.sav")
 def predict(data):
