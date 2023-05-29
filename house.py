@@ -12,7 +12,7 @@ from sklearn.impute import SimpleImputer
 import seaborn as sns
 from pandas.plotting import scatter_matrix
 from sklearn.metrics import mean_absolute_error , mean_squared_error, r2_score
-df = pd.read_csv('/content/housing.csv')
+df = pd.read_csv('housing.csv')
 df = pd.get_dummies(df)
 df.rename(columns = {'ocean_proximity_<1H OCEAN':'<1H OCEAN','ocean_proximity_INLAND':'INLAND','ocean_proximity_ISLAND':'ISLAND','ocean_proximity_NEAR BAY':'NEAR BAY','ocean_proximity_NEAR OCEAN':'NEAR OCEAN'}, inplace = True)
 df.head()
