@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 from predict_cost.py import predict
-from house import R2
+from house.py import R2
 
 st.title('House price prediction')
  
