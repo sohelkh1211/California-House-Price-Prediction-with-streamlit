@@ -27,10 +27,10 @@ Here you can see the diff :-
 **After removing outliers.** <br/>
 <img width="562" alt="image" src="https://github.com/sohelkh1211/California-House-Price-Prediction-with-streamlit/assets/125993375/b65e63b3-4e99-4b09-b95d-3a8610625662"> <br />
 8) Train Test split :- 
-We simply split the dataset into train dataset & test dataset using train_test_split provided by sklearn.model_selection library.
-9) Model Selection :- 
-Model Selection plays an important role in building ML model which gives higher acuracy. I found RandomForestRegressor() which was giving the best accuracy of 86% then the rest ones. Actually, it was giving 65% accuracy before removal of outliers.
-10) Hyperparameter tuning :- 
-It is the technique to reduce RMSE or increase the accuracy of model by adjusting the values of parameters. But this did not gave the intended results.
-11) Building ML app(Streamlit app):- 
+We simply split the dataset into train dataset & test dataset using train_test_split provided by sklearn.model_selection library. <br/>
+9) Model Selection :- <br/>
+Model Selection plays an important role in building ML model which gives higher acuracy. I found RandomForestRegressor() which was giving the best accuracy of 86% then the rest ones. Actually, it was giving 65% accuracy before removal of outliers. <br/>
+10) Hyperparameter tuning :- <br/>
+It is the technique to reduce RMSE or increase the accuracy of model by adjusting the values of parameters. But this did not gave the intended results. <br/>
+11) Building ML app(Streamlit app):- <br/>
 Finally, I built an app with streamlit which takes input from user and displays the output which is the predicted price of house(in $) based on specified features. I also displayed the accuracy of the model.
