@@ -23,7 +23,7 @@ iv) After that, I dropped or deleted all that outlier rows by using new_df = new
 Here you can see the diff :- 
 Before removing outliers
 
-<img width="576" alt="image" src="https://github.com/sohelkh1211/California-House-Price-Prediction-with-streamlit/assets/125993375/e9c5674d-09f5-45dc-97cf-b87a692a7174">
+<img width="576" alt="image" src="https://github.com/sohelkh1211/California-House-Price-Prediction-with-streamlit/assets/125993375/e9c5674d-09f5-45dc-97cf-b87a692a7174"> <br/>
 After removing outliers. <br/>
 <img width="562" alt="image" src="https://github.com/sohelkh1211/California-House-Price-Prediction-with-streamlit/assets/125993375/b65e63b3-4e99-4b09-b95d-3a8610625662"> <br />
 8) Train Test split :- 
