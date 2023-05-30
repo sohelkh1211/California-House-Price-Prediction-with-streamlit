@@ -3,8 +3,6 @@ pandas==0.25.3
 numpy>=1.18.1
 streamlit==1.22.0
 sklearn==0.0.post5
-SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL=False \
-    pip install package-to-test-goes-here
 seaborn==0.12.2
 scipy==1.10.1
 joblib==1.2.0
