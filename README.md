@@ -19,10 +19,13 @@ iii) After that I make use of correlation matrix to determine relationship betwe
 i) Outlier detection is the technique or method to detect outliers in the dataset because it affects the accuracy of our ML model.
 ii) I used one of the popular method called mahalanobis distance to detect outliers in the dataset which calculates the mahalanobis distance of all feature values from the mean.
 iii) Then based on the threshold the outliers are detected. Here I set the threshold value 2.5 but you may set it to 3 according to your dataset.
-iv) After that, I dropped or deleted all that outlier rows by using new_df = new_df.drop(outliers, axis=0)
+iv) After that, I dropped or deleted all that outlier rows by using new_df = new_df.drop(outliers, axis=0).
+
 Here you can see the diff :- 
+
 Before removing outliers 
 <img width="576" alt="image" src="https://github.com/sohelkh1211/California-House-Price-Prediction-with-streamlit/assets/125993375/e9c5674d-09f5-45dc-97cf-b87a692a7174">
+
 After removing outliers
 <img width="562" alt="image" src="https://github.com/sohelkh1211/California-House-Price-Prediction-with-streamlit/assets/125993375/b65e63b3-4e99-4b09-b95d-3a8610625662">
 8) Train Test split :- 
