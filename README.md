@@ -21,10 +21,10 @@ ii) I used one of the popular method called mahalanobis distance to detect outli
 iii) Then based on the threshold the outliers are detected. Here I set the threshold value 2.5 but you may set it to 3 according to your dataset.
 iv) After that, I dropped or deleted all that outlier rows by using new_df = new_df.drop(outliers, axis=0). <br />
 Here you can see the diff :- 
-Before removing outliers
+**Before removing outliers**
 
 <img width="576" alt="image" src="https://github.com/sohelkh1211/California-House-Price-Prediction-with-streamlit/assets/125993375/e9c5674d-09f5-45dc-97cf-b87a692a7174"> <br/>
-After removing outliers. <br/>
+**After removing outliers.** <br/>
 <img width="562" alt="image" src="https://github.com/sohelkh1211/California-House-Price-Prediction-with-streamlit/assets/125993375/b65e63b3-4e99-4b09-b95d-3a8610625662"> <br />
 8) Train Test split :- 
 We simply split the dataset into train dataset & test dataset using train_test_split provided by sklearn.model_selection library.
