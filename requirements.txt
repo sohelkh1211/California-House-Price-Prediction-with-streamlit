@@ -1,4 +1,3 @@
-pkg install pkg-config
 matplotlib==3.1.3
 pandas==0.25.3
 numpy==1.24.3
