@@ -64,7 +64,7 @@ new_df.plot(kind='scatter',x='median_house_value',y='total_rooms',alpha=0.8)
 x = new_df.drop("median_house_value",axis=1)
 y = new_df["median_house_value"]
 x_train , x_test , y_train , y_test = train_test_split(x,y,random_state=100,test_size=0.2)
-len(x_train),len(x_test)
+# len(x_train),len(x_test)
 scaler = StandardScaler()
 x_train = scaler.fit_transform(x_train)
 from sklearn.svm import SVR
