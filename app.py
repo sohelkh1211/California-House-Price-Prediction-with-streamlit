@@ -28,7 +28,7 @@ X = imp.fit_transform(df)
 new_df = pd.DataFrame(X, columns = df.columns)
 new_df.describe()
 new_df.isna().sum()
-%matplotlib inline
+# %matplotlib inline
 new_df.hist(bins=50, figsize=(20,15))
 plt.show()
 corr_matrix = new_df.corr()
