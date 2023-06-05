@@ -17,17 +17,17 @@ from sklearn.metrics import mean_absolute_error , mean_squared_error, r2_score
 df = pd.read_csv('housing.csv')
 df = pd.get_dummies(df)
 df.rename(columns = {'ocean_proximity_<1H OCEAN':'<1H OCEAN','ocean_proximity_INLAND':'INLAND','ocean_proximity_ISLAND':'ISLAND','ocean_proximity_NEAR BAY':'NEAR BAY','ocean_proximity_NEAR OCEAN':'NEAR OCEAN'}, inplace = True)
-df.head()
+# df.head()
 # display(df)
-df.describe()
-df.shape
-df.isna().sum()
-df.info()
+# df.describe()
+# df.shape
+# df.isna().sum()
+# df.info()
 imp = SimpleImputer(strategy='mean')
 X = imp.fit_transform(df)
 new_df = pd.DataFrame(X, columns = df.columns)
-new_df.describe()
-new_df.isna().sum()
+# new_df.describe()
+# new_df.isna().sum()
 # %matplotlib inline
 new_df.hist(bins=50, figsize=(20,15))
 plt.show()
@@ -35,7 +35,7 @@ corr_matrix = new_df.corr()
 corr_matrix['median_house_value'].sort_values(ascending=False)
 new_df['bedroom_ratio'] = new_df['total_bedrooms']/new_df['total_rooms'] #Total number of bedrooms per room
 new_df['household_rooms'] = new_df['total_rooms']/new_df['households'] #Total number of rooms per household
-df
+# df
 new_df.drop(['total_bedrooms','households','population'],axis = 1,inplace=True)
 rcParams['figure.figsize'] = (10,5)
 sns.heatmap(corr_matrix,annot=True,cmap='Greens')
@@ -50,15 +50,15 @@ mean = np.mean(new_df, axis=0)
 covariance = np.cov(new_df, rowvar=False)
 mahalanobis_dist = distance.cdist(new_df, [mean], 'mahalanobis', VI=np.linalg.inv(covariance)).ravel()
 df1 = pd.DataFrame(mahalanobis_dist, columns=['Mahalanobis distance'])
-df1
+# df1
 column = df1['Mahalanobis distance']
 n = column[column > 2.5].count()
-print(n)
+# print(n)
 outliers = np.where(mahalanobis_dist > 2.5)[0]
-outliers
-min(mahalanobis_dist)
+# outliers
+# min(mahalanobis_dist)
 new_df = new_df.drop(outliers, axis=0)
-new_df.shape
+# new_df.shape
 new_df.plot(kind='scatter',x='median_house_value',y='median_income',alpha=0.8)
 new_df.plot(kind='scatter',x='median_house_value',y='total_rooms',alpha=0.8)
 x = new_df.drop("median_house_value",axis=1)
@@ -75,12 +75,12 @@ model = RandomForestRegressor() # Best model
 model.fit(x_train,y_train)
 x_test = scaler.fit_transform(x_test)
 y_pred = model.predict(x_test)
-len(y_pred)
+# len(y_pred)
 MSE = mean_squared_error(y_test , y_pred)
 MAE = mean_absolute_error(y_test , y_pred)
 RMSE = np.sqrt(MSE)
 R2 = r2_score(y_test , y_pred)
-MSE , MAE , RMSE, R2
+# MSE , MAE , RMSE, R2
 import joblib
 joblib.dump(model, "model.sav")
 def predict(data):
